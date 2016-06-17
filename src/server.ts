@@ -26,15 +26,9 @@ app.use(bodyParser.json());
 // Serve static files
 app.use(express.static(ROOT, {index: false}));
 
-import { serverApi } from './backend/api';
-// Our API for demos only
-app.get('/data.json', serverApi);
-
 import { ngApp } from './main.node';
 // Routes with html5pushstate
 app.use('/', ngApp);
-app.use('/about', ngApp);
-app.use('/home', ngApp);
 
 // use indexFile over ngApp only when there is too much load on the server
 function indexFile(req, res) {

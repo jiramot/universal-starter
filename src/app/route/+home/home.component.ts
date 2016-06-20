@@ -8,7 +8,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
     ROUTER_DIRECTIVES
   ],
   pipes: [],
-  template: require('home.component.html')
+  template: require('./home.component.html')
 })
 
 export class HomeComponent {

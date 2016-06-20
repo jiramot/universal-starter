@@ -1,15 +1,15 @@
 const webpack = require('webpack');
 const path = require('path');
-const commonConfig = require('./webpack.common.js');
-const clientConfig = require('./webpack.client');
-const serverConfig = require('./webpack.server');
-const helper = require('./helpers')
+const commonConfig = require('./config/webpack.common.js');
+const clientConfig = require('./config/webpack.client.js');
+const serverConfig = require('./config/webpack.server.js');
+const helpers = require('./helpers')
 
 // Default config
 var defaultConfig = {
   context: __dirname,
   resolve: {
-    root: helper.root('/src')
+    root: helpers.root('/src')
   },
   output: {
     publicPath: path.resolve(__dirname),

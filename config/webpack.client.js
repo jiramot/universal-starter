@@ -1,11 +1,11 @@
 const path = require('path');
-const helper = require('./helpers');
+const helpers = require('./../helpers');
 
 module.exports = {
   target: 'web',
   entry: './src/client',
   output: {
-    path: helper.root('dist/client')
+    path: helpers.root('dist/client')
   },
   node: {
     global: true,

@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const helper = require('./helpers');
 
 module.exports = {
   resolve: {
@@ -16,8 +17,8 @@ module.exports = {
       {
         test: /\.js$/, loader: 'source-map-loader', exclude: [
         // these packages have problems with their sourcemaps
-        root('node_modules/rxjs'),
-        root('node_modules/@angular'),
+        helper.root('node_modules/rxjs'),
+        helper.root('node_modules/@angular'),
       ]
       }
     ],
@@ -25,10 +26,4 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(true)
   ]
-
 };
-
-function root(args) {
-  args = Array.prototype.slice.call(arguments, 0);
-  return path.join.apply(path, [__dirname].concat(args));
-}

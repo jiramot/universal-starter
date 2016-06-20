@@ -20,6 +20,9 @@ module.exports = {
        */
       { test: /\.html$/, loader: 'raw-loader', exclude: [helpers.root('src/index.html')]}
 
+      //Env
+
+
     ],
     preLoaders: [
       // needed to lower the filesize of angular due to inline source-maps

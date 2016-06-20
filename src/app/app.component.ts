@@ -1,33 +1,42 @@
-import { Component, Directive, ElementRef, Renderer } from '@angular/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
-import { Http } from '@angular/http';
-
-@Component({
-  selector: 'home',
-  template: `
-    <div>This is the "Home" page</div>
-  `
-})
-export class Home { }
+import {Component, Directive, ElementRef, Renderer} from '@angular/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Http} from '@angular/http';
+import {HomeComponent} from './route/+home';
 
 @Component({
   selector: 'app',
   directives: [
-    ...ROUTER_DIRECTIVES
+    ROUTER_DIRECTIVES
   ],
-  template: `<h1>My First Angular 2 App</h1>`
+  template: `
+    <span router-active>
+      <button [routerLink]=" ['Index'] ">
+        Index
+      </button>
+    </span>
+    <span router-active>
+      <button [routerLink]=" ['Home'] ">
+        Home
+      </button>
+    </span>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    `
 })
-@RouteConfig([
-  { path: '/', component: Home, name: 'Home', useAsDefault: true },
-  { path: '/home', component: Home, name: 'Home' },
-  { path: '/**', redirectTo: ['Home'] }
-])
-export class App {
-  title: string = 'ftw';
-  data = {};
-  server: string;
 
-  constructor(public http: Http) { }
+@RouteConfig([
+  { path: '/',      name: 'Index', component: HomeComponent, useAsDefault: true },
+  { path: '/home',  name: 'Home',  component: HomeComponent }
+])
+
+export class App {
+  title:string = 'ftw';
+  data = {};
+  server:string;
+
+  constructor(public http:Http) {
+  }
 
   ngOnInit() {
     // limit the use of setTimeouts

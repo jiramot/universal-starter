@@ -10,7 +10,16 @@ module.exports = {
     loaders: [
       // TypeScript
       {test: /\.ts$/, loader: 'ts-loader'},
-      {test: /\.json$/, loader: 'raw-loader'}
+      {test: /\.json$/, loader: 'raw-loader'},
+
+      // HTML
+      /* Raw loader support for *.html
+       * Returns file content as string
+       *
+       * See: https://github.com/webpack/raw-loader
+       */
+      { test: /\.html$/, loader: 'raw-loader', exclude: [helpers.root('src/index.html')]}
+
     ],
     preLoaders: [
       // needed to lower the filesize of angular due to inline source-maps

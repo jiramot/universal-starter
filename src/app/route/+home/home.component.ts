@@ -8,11 +8,7 @@ import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
     ROUTER_DIRECTIVES
   ],
   pipes: [],
-  template: `
-    <p>
-      This is home of fungjai 2.0 !!!!
-    </p>  
-  `
+  template: require('home.component.html')
 })
 
 export class HomeComponent {

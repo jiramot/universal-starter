@@ -17,9 +17,15 @@ module.exports = {
        *
        * See: https://github.com/webpack/raw-loader
        */
-      { test: /\.html$/, loader: 'raw-loader', exclude: [helpers.root('src/index.html')]}
+      {test: /\.html$/, loader: 'raw-loader', exclude: [helpers.root('src/index.html')]},
 
       //Env
+
+      /*  Sass loader support for *.sass
+       *
+       *  SeeL https://github.com/AngularClass/angular2-webpack-starter/wiki/How-to-include-SCSS-in-components
+       */
+      {test: /\.scss$/, exclude: /node_modules/, loaders: ['raw-loader', 'sass-loader']}
 
 
     ],

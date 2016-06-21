@@ -8,7 +8,8 @@ import {environment} from '../../../../config/env/environment';
     ROUTER_DIRECTIVES
   ],
   pipes: [],
-  template: require('./home.component.html')
+  template: require('./home.component.html'),
+  styles: [require('./home.component.scss')]
 })
 
 export class HomeComponent {

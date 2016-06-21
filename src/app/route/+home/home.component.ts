@@ -1,11 +1,12 @@
 import {Component, Directive, ElementRef, Renderer} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import {ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {environment} from '../../environment';
 
 @Component({
+  moduleId: __filename,
   selector: 'app-home',
   directives: [
-    ROUTER_DIRECTIVES
+    ...ROUTER_DIRECTIVES
   ],
   pipes: [],
   template: require('./home.component.html')

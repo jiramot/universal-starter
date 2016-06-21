@@ -5,21 +5,21 @@ const clientConfig = require('./config/webpack.client.js');
 const serverConfig = require('./config/webpack.server.js');
 const helpers = require('./helpers');
 
-var definePlugin = require('./webpack.dev');
+var definePlugin = require('./config/webpack.dev');
 
 switch (process.env.NODE_ENV) {
   case 'prod':
   case 'production':
-    definePlugin = require('./webpack.prod.js');
+    definePlugin = require('./config/webpack.prod.js');
     break;
   case 'test':
   case 'testing':
-    definePlugin = require('./webpack.test.js');
+    definePlugin = require('./config/webpack.test.js');
     break;
   case 'dev':
   case 'development':
   default:
-    definePlugin = require('./webpack.dev.js');
+    definePlugin = require('./config/webpack.dev.js');
 }
 
 // Default config

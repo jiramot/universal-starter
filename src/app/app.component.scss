@@ -1,0 +1,41 @@
+// valiable
+$circle: 50%;
+$radius: 5px;
+$white: #fff;
+$yellow: #ff3;
+$heavyblue: #003;
+$gray: #f3f3f3;
+$hardgray: #b2b2b2;
+
+// mixins
+@mixin border-radius($circle) {
+  -webkit-border-radius: $circle;
+  -moz-border-radius: $circle;
+  -ms-border-radius: $circle;
+  border-radius: $circle;
+}
+// std element
+
+// duplicate
+.img-parent {
+  height:100%;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%; // Part 1: Set a maximum relative to the parent
+  max-height: 100%;
+  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+  margin: 0px auto;
+}
+
+@media (max-width: 1023px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 479px) {
+
+}

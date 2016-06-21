@@ -1,5 +1,5 @@
 import {Component, Directive, ElementRef, Renderer} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Routes, ROUTER_DIRECTIVES} from '@angular/router';
 import {Http} from '@angular/http';
 import {HomeComponent} from './route/+home';
 
@@ -8,26 +8,23 @@ import {HomeComponent} from './route/+home';
   directives: [
     ROUTER_DIRECTIVES
   ],
-  template: `
-    <span router-active>
-      <button [routerLink]=" ['Index'] ">
-        Index
-      </button>
-    </span>
-    <span router-active>
-      <button [routerLink]=" ['Home'] ">
-        Home
-      </button>
-    </span>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
+  template:
+  `
+  <div class="container-fluid">
+    <nav>
+      <a [routerLink]="['/']">Index</a>
+      <a [routerLink]="['/home']">Home</a>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
     `
 })
 
-@RouteConfig([
-  { path: '/',      name: 'Index', component: HomeComponent, useAsDefault: true },
-  { path: '/home',  name: 'Home',  component: HomeComponent }
+@Routes([
+  { path: '/',      component: HomeComponent },
+  { path: '/home',  component: HomeComponent }
 ])
 
 export class App {

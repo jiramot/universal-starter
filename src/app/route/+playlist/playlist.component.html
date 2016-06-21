@@ -1,0 +1,7 @@
+<p>Playlist</p>
+
+<div *ngFor="let playlistItem of playlist">
+  <a [routerLink]=" ['MusicPlaylist', {pid: playlistItem.id}] ">
+    <label>{{playlistItem.name}}</label>
+  </a>
+</div>

@@ -4,7 +4,6 @@ const commonConfig = require('./config/webpack.common.js');
 const clientConfig = require('./config/webpack.client.js');
 const serverConfig = require('./config/webpack.server.js');
 const helpers = require('./helpers');
-const config = require('config');
 
 var definePlugin = require('./webpack.dev');
 

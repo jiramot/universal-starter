@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <nav>
+        <a [routerLink]=" ['Home'] ">Home</a>
+        <a [routerLink]=" ['Home'] ">Playlist</a>
+        <a [routerLink]=" ['Home'] ">Trending</a>
+        <a [routerLink]=" ['Home'] ">new</a>
+        <a [routerLink]=" ['Home'] ">user</a>
+        <a [routerLink]=" ['Home'] ">sign_up</a>
+        <a [routerLink]=" ['Home'] ">login</a>
+        <a [routerLink]=" ['Home'] ">favorite</a>
+    </nav>
+</div>
+
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+</div>
+<div class="container-fluid">
+    <footer></footer>
+</div>
+<music-player [bar]="bar"></music-player>

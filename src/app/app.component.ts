@@ -8,26 +8,12 @@ import {HomeComponent} from './route/+home';
   directives: [
     ROUTER_DIRECTIVES
   ],
-  template: `
-    <span router-active>
-      <button [routerLink]=" ['Index'] ">
-        Index
-      </button>
-    </span>
-    <span router-active>
-      <button [routerLink]=" ['Home'] ">
-        Home
-      </button>
-    </span>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-    `
+  template: require('./app.component.html'),
+  styles: [require('./app.component.scss')]
 })
 
 @RouteConfig([
-  { path: '/',      name: 'Index', component: HomeComponent, useAsDefault: true },
-  { path: '/home',  name: 'Home',  component: HomeComponent }
+  {path: '/', name: 'Home', component: HomeComponent, useAsDefault: true}
 ])
 
 export class App {

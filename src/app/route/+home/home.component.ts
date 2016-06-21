@@ -1,6 +1,6 @@
 import {Component, Directive, ElementRef, Renderer} from '@angular/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
-import {environment} from '../../environment';
+import {environment} from '../../../../config/env/environment';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,8 @@ import {environment} from '../../environment';
 
 export class HomeComponent {
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
     console.log('hello `Home` component');

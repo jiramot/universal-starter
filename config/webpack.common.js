@@ -12,7 +12,6 @@ module.exports = {
       {test: /\.ts$/, loader: 'ts-loader'},
       {test: /\.json$/, loader: 'raw-loader'},
 
-      // HTML
       /* Raw loader support for *.html
        * Returns file content as string
        *

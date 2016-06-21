@@ -6,21 +6,21 @@ const serverConfig = require('./config/webpack.server.js');
 const helpers = require('./helpers');
 const config = require('config');
 
-var definePlugin = require('./webpack.dev');
+var definePlugin = require('./config/env/webpack.dev.js');
 
 switch (process.env.NODE_ENV) {
   case 'prod':
   case 'production':
-    definePlugin = require('./webpack.prod.js');
+    definePlugin = require('./config/env/webpack.prod.js');
     break;
   case 'test':
   case 'testing':
-    definePlugin = require('./webpack.test.js');
+    definePlugin = require('./config/env/webpack.test.js');
     break;
   case 'dev':
   case 'development':
   default:
-    definePlugin = require('./webpack.dev.js');
+    definePlugin = require('./config/env/webpack.dev.js');
 }
 
 // Default config

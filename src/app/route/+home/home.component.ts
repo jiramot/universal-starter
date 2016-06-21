@@ -1,5 +1,5 @@
 import {Component, Directive, ElementRef, Renderer} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 import {environment} from '../../environment';
 
 @Component({

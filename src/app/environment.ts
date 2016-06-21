@@ -1,3 +1,3 @@
 export const environment = {
-  name: __NAME__
+  // name: __NAME__
 }
